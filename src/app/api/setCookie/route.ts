@@ -7,7 +7,6 @@ export async function POST(req: NextRequest) {
 
     // Set the cookie with your custom domain
     setCookie({ res: NextResponse }, 'sessionToken', token, {
-      httpOnly: true,
       secure: process.env.NODE_ENV === 'production', // secure cookie in production
       sameSite: 'none', // needed for cross-origin cookies
       maxAge: 60 * 60 * 24, // 1 day
