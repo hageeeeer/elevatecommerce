@@ -5,15 +5,24 @@ import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
-
+    cookies: {
+        sessionToken: {
+          name: '__Secure-next-auth.session-token',
+          options: {
+            httpOnly: true,
+            secure: process.env.NODE_ENV === 'production', // Only secure in production
+            sameSite: 'None', // Allow cross-site cookies
+          },
+        },
+      },
+      session: {
+        strategy: 'jwt', // Use JWT for session handling
+      },
+      secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: "/auth/login", // Custom sign-in page
     },
-    session: {
-        strategy: "jwt", // JWT session strategy
-        maxAge: 60 * 15, // 15 minutes session expiration
-    },
-
+ 
     providers: [
         GitHubProvider({
             clientId: process.env.GITHUB_ID as string,

@@ -28,8 +28,7 @@ export default async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
   if (privatePages.has(req.nextUrl.pathname)) {
     if (token) {
-      console.log('token',token);
-      
+     
       return NextResponse.next(); // User is authenticated, continue to the protected page
     }
 
