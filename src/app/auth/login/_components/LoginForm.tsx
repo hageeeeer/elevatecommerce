@@ -81,7 +81,7 @@ export default function LoginForm() {
                                         Or sign up with e-mail
                                     </div>
                                 </div>
-                                <form action="/api/auth/callback/credentials" onSubmit={formik.handleSubmit} >
+                                <form onSubmit={formik.handleSubmit} >
                                     <div className="mx-auto max-w-xs">
                                         {errormsg && <p>{errormsg}</p>}
 
