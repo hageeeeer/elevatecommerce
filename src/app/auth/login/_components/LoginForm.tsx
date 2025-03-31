@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { InfinitySpin } from 'react-loader-spinner'
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { signIn } from 'next-auth/react';
