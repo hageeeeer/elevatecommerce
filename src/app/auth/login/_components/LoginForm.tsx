@@ -13,12 +13,12 @@ export default function LoginForm() {
             email,
             password,
             redirect: false,
-            callbackUrl: `${window.location.origin}/`,
+            callbackUrl: `${window.location.origin}/cart`,
         });
         setLoading(false)
         
         if (res?.ok) {
-            window.location.href = res.url || '/';
+            window.location.href = res.url || '/cart';
         }
         else {
             seterror('email or password isnt correct!')
