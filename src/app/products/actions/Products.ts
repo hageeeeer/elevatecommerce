@@ -2,6 +2,6 @@
 
 export async function AllProducts()
 {
-    const data = await fetch(process.env.API + '/products')
+    const data = await fetch(process.env.API + `/products`)
     return data.json()
 } 

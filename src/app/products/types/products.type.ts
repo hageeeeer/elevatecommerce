@@ -33,3 +33,8 @@ export interface productResponse {
     id: string
   }
   
+
+  export interface BestSellerIn extends Product{
+    rank: number; 
+    salesVolume: number;  
+  }

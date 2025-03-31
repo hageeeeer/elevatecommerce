@@ -1,13 +1,13 @@
 'use client'
 import AddBtn from '@/app/products/_components/AddBtn';
 import ProductItem from '@/app/products/_components/ProductItem';
-import { AllProducts } from '@/app/products/actions/allproducts';
 import { SingleProduct } from '@/app/products/actions/getSingleProduct';
 import { Product } from '@/app/products/types/products.type';
 import { displayStars } from '@/lib/rate';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import React, { useEffect, useState, useCallback } from 'react';
+import { AllProducts } from '../products/actions/Products';
 
 export default function ProductDetails() {
  

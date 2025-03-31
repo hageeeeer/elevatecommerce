@@ -1,7 +1,7 @@
 import React from 'react'
 import { Product, productResponse } from '../types/products.type'
-import { AllProducts } from '../actions/allproducts'
 import ProductItem from './ProductItem'
+import { AllProducts } from '../actions/Products'
 
 
 export default async function Products() {

@@ -5,19 +5,20 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css'; // core Swiper
 import 'swiper/css/navigation'; // Navigation module
 import 'swiper/css/pagination'; // Pagination module
-import { Product, productResponse } from '@/app/products/types/products.type';
-import { AllProducts } from '@/app/products/actions/allproducts';
+import { BestSellerIn } from '@/app/products/types/products.type';
+
 import Image from 'next/image';
+import { BestSellerApi } from '@/app/products/actions/BestSeller';
 export default  function BestSeller() {
- const[data,setdata] = useState<Product[]>([])
-  async function getProducts()
+ const[data,setdata] = useState<BestSellerIn[]>([])
+  async function getBestSeller()
   {
-    const response:productResponse = await AllProducts()
-    setdata(response?.products);
+    const response = await BestSellerApi()
+    setdata(response?.bestSeller);
     
   }
   useEffect(()=>{
-    getProducts()
+    getBestSeller()
   },[])
   
   return (
@@ -40,7 +41,7 @@ export default  function BestSeller() {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
           >
-            {data?.sort((a:Product,b:Product)=>b.rateAvg - a.rateAvg).map((prod: Product) => <SwiperSlide key={prod._id}>
+            {data?.map((prod: BestSellerIn) => <SwiperSlide key={prod._id}>
               <Image width={300} height={300} className='rounded object-cover' src={prod.imgCover} alt='pic'/>
             </SwiperSlide>)}
 

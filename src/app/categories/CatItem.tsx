@@ -1,7 +1,8 @@
 import React, {  useState } from 'react'
 import { Category } from './types/category.type'
 import { Product } from '../products/types/products.type'
-import { AllProducts } from '../products/actions/allproducts'
+import { AllProducts } from '../products/actions/Products';
+
 
 interface CatItemProps {
   fn: (arr: Product[]) => void;

@@ -64,7 +64,7 @@ export default function Navbar() {
             ) : (
               <>
                <li>
-               {/* <p className="bg-red-200">Hi{session?.user?.firstName}</p> */}
+               <p className="bg-red-200">Hi{session?.user?.firstName}</p>
                 </li>
               <SignOutCo />
               </>

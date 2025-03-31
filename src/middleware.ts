@@ -1,25 +1,20 @@
 import { getToken } from "next-auth/jwt";
 import { NextRequest, NextResponse } from "next/server";
 
+const privatePage = new Set(['/cart','/dashboard'])
 
-export default async function middleware(req:NextRequest)
-{
-   // const token =  req.cookies.get('next-auth.session-token')
-    // console.log('token from middle ware',token);
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
-    console.log('tokenn',token);
-    
-    if (!token) {
-      return NextResponse.rewrite(new URL('/auth/login', req.url));
-    }
-     
-    if (token&& req.nextUrl.pathname.startsWith('/auth/login')) {  
-      return NextResponse.rewrite(new URL('/', req.url)); // Redirect to homepage if token exists
-    }
-    
+export default async function middleware(req: NextRequest) {
+  const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+  if(privatePage.has(req.nextUrl.pathname)){
+  if (token) 
     return NextResponse.next()
+    
+    const redirectUrl = new URL('/',req.nextUrl.origin)
+    return NextResponse.redirect(redirectUrl)
+}
+  return NextResponse.next()
 }
 
 export const config = {
-  matcher: ['/cart'],
+  matcher: ['/cart','/dashboard'],
 }
