@@ -5,20 +5,22 @@ import React, { useState } from 'react'
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 export default function LoginForm() {
+    const router = useRouter();
     const [loading, setLoading] = useState(false)
+    const { callbackUrl = '/cart' } = router.query; 
     const [errormsg, seterror] = useState('')
     async function handleLogin({ email, password }: { email: string, password: string }) {
         const res = await signIn('credentials', {
             email,
             password,
-            redirect: false,
-            callbackUrl: `${window.location.origin}/cart`,
+            redirect: false
         });
         setLoading(false)
         
         if (res?.ok) {
-            window.location.href = res.url || '/cart';
+            router.push(callbackUrl as string || '/');
         }
         else {
             seterror('email or password isnt correct!')
