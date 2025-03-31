@@ -5,20 +5,10 @@ import { NextAuthOptions } from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 
 export const authOptions: NextAuthOptions = {
-    cookies: {
-        sessionToken: {
-          name: '__Secure-next-auth.session-token',
-          options: {
-            httpOnly: true,
-            secure: process.env.NODE_ENV === 'production', // Only secure in production
-            sameSite: 'None', // Allow cross-site cookies
-          },
-        },
-      },
+   
       session: {
         strategy: 'jwt', // Use JWT for session handling
       },
-      secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: "/auth/login", // Custom sign-in page
     },
