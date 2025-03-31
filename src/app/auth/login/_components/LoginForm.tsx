@@ -14,8 +14,7 @@ export default function LoginForm() {
         const res = await signIn('credentials', {
             email,
             password,
-            redirect: false,
-            callbackUrl: 'http://localhost:3000'  
+            redirect: false
         });
         setLoading(false)
         console.log("res",res);
