@@ -9,7 +9,6 @@ import { signIn } from 'next-auth/react';
 export default function LoginForm() {
     const [loading, setLoading] = useState(false)
     const [errormsg, seterror] = useState('')
-    const router = useRouter();
     async function handleLogin({ email, password }: { email: string, password: string }) {
         const res = await signIn('credentials', {
             email,
