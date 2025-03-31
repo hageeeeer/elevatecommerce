@@ -14,14 +14,13 @@ export default function LoginForm() {
         const res = await signIn('credentials', {
             email,
             password,
-            redirect: false
+            redirect: false,
+            callbackUrl: `${window.location.origin}/`,
         });
         setLoading(false)
-        console.log("res",res);
         
         if (res?.ok) {
-            router.push('/')
-            router.refresh()
+            window.location.href = res.url || '/';
         }
         else {
             seterror('email or password isnt correct!')
