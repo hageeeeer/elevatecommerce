@@ -5,7 +5,7 @@ import { NextRequest, NextResponse } from "next/server";
 export default async function middleware(req:NextRequest)
 {
   
-    const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+    const token =   req.cookies.get('next-auth.session-token')
     if (!token) {
       return NextResponse.rewrite(new URL('/auth/login', req.url));
     }
