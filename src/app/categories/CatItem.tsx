@@ -24,12 +24,6 @@ export default function CatItem({ item, fn }: CatItemProps) {
     }
   }
 
-  // Initial filtering when the component mounts
-//   useEffect(() => {
-//     filterProducts();
-//   }, [item._id]); // Only run once on mount
-
-  // Handle change event for filtering
   const handleRadioChange = () => {
     filterProducts();
   };

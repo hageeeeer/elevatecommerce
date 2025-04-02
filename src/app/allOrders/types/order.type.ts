@@ -1,14 +1,25 @@
-export interface productResponse {
-    message: string
-    metadata: Metadata
-    products: Product[]
+
+
+export interface OrderI {
+    _id: string
+    user: string
+    orderItems: OrderItem[]
+    totalPrice: number
+    paymentType: string
+    isPaid: boolean
+    isDelivered: boolean
+    state: string
+    createdAt: string
+    updatedAt: string
+    orderNumber: string
+    __v: number
   }
   
-  export interface Metadata {
-    currentPage: number
-    totalPages: number
-    limit: number
-    totalItems: number
+  export interface OrderItem {
+    product?: Product
+    price: number
+    quantity: number
+    _id: string
   }
   
   export interface Product {
@@ -32,7 +43,4 @@ export interface productResponse {
     rateCount: number
     id: string
   }
-  export interface BestSellerIn extends Product{
-    rank: number; 
-    salesVolume: number;  
-  }
+  

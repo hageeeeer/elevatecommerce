@@ -2,10 +2,16 @@
 import Link from 'next/link'
 import { InfinitySpin } from 'react-loader-spinner'
 import React, { useState } from 'react'
+
+
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
 export default function LoginForm() {
+    const router = useRouter()
+    // State to toggle password visibility
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
     const [loading, setLoading] = useState(false)
     const [errormsg, seterror] = useState('')
     async function handleLogin({ email, password }: { email: string, password: string }) {
@@ -15,9 +21,10 @@ export default function LoginForm() {
             redirect: false
         });
         setLoading(false)
-        
+
         if (res?.ok) {
-            window.location.href = res.url || '/';
+            router.push('/')
+            router.refresh()
         }
         else {
             seterror('email or password isnt correct!')
@@ -78,23 +85,36 @@ export default function LoginForm() {
                                         Or sign up with e-mail
                                     </div>
                                 </div>
-                                <form  onSubmit={formik.handleSubmit} >
+                                <form onSubmit={formik.handleSubmit} >
                                     <div className="mx-auto max-w-xs">
                                         {errormsg && <p>{errormsg}</p>}
-
-                                        <input value={formik.values.email} onChange={formik.handleChange} name="email" onBlur={formik.handleBlur} className="w-full mt-5 px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white" type="email" placeholder="Email" />
-                                        {(formik.errors.email && formik.touched.email) ?
-                                            <div className="flex items-center p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                                                <svg className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                                                </svg>
-                                                <span className="sr-only">Info</span>
-                                                <div>
-                                                    {formik.errors.email}
+                                        
+                                            <input value={formik.values.email} onChange={formik.handleChange} name="email" onBlur={formik.handleBlur} className="w-full mt-5 px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white" type="email" placeholder="Email" />
+                                            {(formik.errors.email && formik.touched.email) ?
+                                                <div className="flex items-center p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                                                    <svg className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                                                    </svg>
+                                                    <span className="sr-only">Info</span>
+                                                    <div>
+                                                        {formik.errors.email}
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            : ''}
-                                        <input name="password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type="password" placeholder="Password" />
+                                                : ''}
+                                                <div className="relative">
+                                            <input name="password" value={formik.values.password} onChange={formik.handleChange} onBlur={formik.handleBlur} className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5" type={isPasswordVisible ? 'text' : 'password'} placeholder="Password" />
+                                            <button
+                                                type="button"
+                                                onClick={() => setIsPasswordVisible(!isPasswordVisible)}
+                                                className="absolute right-4 top-[50%] text-sm"
+                                            >
+                                                {isPasswordVisible ?
+                                                    <i className="fa-solid fa-eye-slash"></i>
+                                                    :
+                                                    <i className="fa-solid fa-eye"></i>
+                                                }
+                                            </button>
+                                        </div>
                                         {(formik.errors.password && formik.touched.password) ?
                                             <div className="flex items-center p-4 my-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
                                                 <svg className="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

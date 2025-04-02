@@ -1,4 +1,4 @@
-export interface MyFormValues {
+ export  interface RegisterData {
     firstName: string;
     lastName: string;
     email: string;

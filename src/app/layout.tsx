@@ -2,18 +2,19 @@
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import './globals.css'
-
 import { Toaster } from 'react-hot-toast'
 import { SessionProvider } from 'next-auth/react'
 import { useEffect } from 'react'
-
 import dynamic from 'next/dynamic';
 
 const Navbar = dynamic(() => import('./_components/navbar/Navbar'), { ssr: false });
 // Create a client for React Query
 const queryClient = new QueryClient()
 
-export default function RootLayout({ children }:{ children: React.ReactNode }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+
+
+
   // Adding cz-shortcut-listen only on the client side
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -32,11 +33,10 @@ export default function RootLayout({ children }:{ children: React.ReactNode }) {
 
   return (
     <html lang="en">
-      <head>
-      </head>
       <body>
         <QueryClientProvider client={queryClient}>
           <SessionProvider>
+
             <Navbar />
             {children}
           </SessionProvider>

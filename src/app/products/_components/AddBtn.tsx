@@ -6,7 +6,7 @@ import { useMutation, useQueryClient } from '@tanstack/react-query';
 import Loading from '@/app/_components/Loading';
 
 interface AddBtnProps {
-  product: string; // You could potentially change this to a more specific type if needed, e.g., ProductId
+  product: string;
 }
 
 export default function AddBtn({ product }: AddBtnProps) {

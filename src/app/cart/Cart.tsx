@@ -10,6 +10,7 @@ import img from '../../assests/cart.jpg'
 import Image from 'next/image'
 import {  CartItem } from './types/cart.types'
 import useQueryCart from './hooks/useCart'
+import CheckOut from '../_components/checkout/CheckOut'
 
 
 export default function Cart() {
@@ -115,29 +116,7 @@ export default function Cart() {
 
           </div>
           <div className="w-1/3">
-            <div className='bg-whitepink  p-4 rounded-xl'>
-              <h2 className='font-bold my-5 text-xl'>Cart summary</h2>
-              <div className='flex justify-between my-3'>
-                <span>Sub total:</span>
-                <span className="text-slate-600">${response?.cart?.totalPrice}</span>
-              </div>
-              <div className='flex justify-between my-3'>
-                <span>discount:</span>
-                <span className="text-slate-600">${response?.cart?.discount}</span>
-              </div>
-              <div className='flex justify-between my-3'>
-                <span>shipping:</span>
-                <span className="text-slate-600">Free</span>
-              </div>
-              <div className='flex justify-between my-3'>
-                <span>price after discount:</span>
-                <span className="text-pink font-bold">${response?.cart?.totalPriceAfterDiscount}</span>
-              </div>
-              <button className="px-4 py-2 text-white rounded bg-pink my-5">
-                <span className='mx-2'> Check out now </span>
-                <i className="fa-solid fa-arrow-right"></i>
-              </button>
-            </div>
+            <CheckOut  data={response?.cart}/>
             <div className="my-10">
               <button onClick={() => { clearfn() }} className="px-4 py-2 items-center text-white rounded bg-pink ">
                 <i className="fa-solid fa-trash"></i>

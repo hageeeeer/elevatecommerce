@@ -1,18 +1,8 @@
 
-/* @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap'); */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-span.logo{
-  font-family: "Alex Brush", cursive !important;
-}
 
 /* slider button */
 .swiper-button-prev, .swiper-button-next{
