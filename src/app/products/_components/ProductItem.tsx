@@ -27,7 +27,8 @@ export default function ProductItem({ item }: { item: Product }) {
                     <br/>
                     <span className='text-[rgb(251,102,193)] font-semibold'>{(item.priceAfterDiscount / 100).toFixed(2)}$</span>
                     </div>  :<span className='text-[rgb(251,102,193)] font-semibold'>{(item.price / 100).toFixed(2)}$</span> }
-                     {!item.quantity? <p className="text-red-500 font-bold">sold out</p> :  
+                    
+                     {item.quantity<=0? <p className="text-red-500 font-bold">sold out</p> :  
                      <AddBtn product={item._id}/>
                      }
                     </div>
