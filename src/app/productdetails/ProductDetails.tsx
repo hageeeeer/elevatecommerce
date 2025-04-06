@@ -104,8 +104,9 @@ export default function ProductDetails() {
 
       <h2 className="my-4 font-bold text-xl">Related products</h2>
       <div className="flex flex-wrap my-5 ml-[-12px] mr-[-12px]">
-        {productList.map((prod: Product) => (
-          <ProductItem key={prod._id} item={prod} />
+        {productList.map((prod: Product) => (<div key={prod._id} className='lg:w-1/4  sm:w-1/2 w-full p-3'>
+          <ProductItem item={prod} />
+        </div>
         ))}
       </div>
     </div>
