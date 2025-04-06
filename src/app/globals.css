@@ -4,9 +4,12 @@
 @tailwind utilities;
 
 
-/* slider button */
 .swiper-button-prev, .swiper-button-next{
   color: #FB66C1!important;
    
 }
 
+
+.custom-img{
+  height: 300px !important;
+}

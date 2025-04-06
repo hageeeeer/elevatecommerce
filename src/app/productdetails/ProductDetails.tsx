@@ -44,8 +44,8 @@ export default function ProductDetails() {
 
   return (
     <div className="container">
-      <div className="flex gap-10">
-        <div className="w-1/3">
+      <div className="flex gap-10 flex-wrap">
+        <div className="md:w-1/3 w-100">
           <Image
             width={300}
             height={300}
@@ -70,7 +70,7 @@ export default function ProductDetails() {
           </div>
         </div>
 
-        <div className="w-2/3">
+        <div className="md:w-2/3 w-100">
           <h2 className="font-bold mb-3 text-xl">{productobj?.title}</h2>
           <p>{productobj?.description}</p>
           <p className="font-semibold">{productobj?.title}</p>
@@ -103,7 +103,7 @@ export default function ProductDetails() {
       </div>
 
       <h2 className="my-4 font-bold text-xl">Related products</h2>
-      <div className="flex flex-wrap my-5">
+      <div className="flex flex-wrap my-5 ml-[-12px] mr-[-12px]">
         {productList.map((prod: Product) => (
           <ProductItem key={prod._id} item={prod} />
         ))}

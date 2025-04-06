@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     extend: {
@@ -25,11 +26,12 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        whitepink:'#FEE0F3',
-        pink:'#FB66C1',
+        whitepink:'#FEEDF7',
+        pink:'#F82BA9',
+        gray:"#757F95"
       },
     },
   },
-  plugins: [],
+  plugins: [  require('flowbite/plugin') ],
 };
 export default config;

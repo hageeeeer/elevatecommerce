@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Service() {
   return (
-    <div className='hidden md:block'>
+    <div className='hidden lg:block'>
         <div className='flex bg-[rgba(251,102,193,.2)] p-6 rounded-lg my-5'>
             <div className='w-1/4'>
                 <div className='flex items-center gap-4'>

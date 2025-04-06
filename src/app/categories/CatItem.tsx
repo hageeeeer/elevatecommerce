@@ -30,7 +30,7 @@ export default function CatItem({ item, fn }: CatItemProps) {
 
   return (
     <li className='flex items-center justify-between cursor-pointer' key={item._id}>
-      <div className='flex gap-2 item-center'>
+      <div className='flex gap-2 items-center'>
         <input onChange={handleRadioChange} type="radio" id={item._id} name='category' value={item.name} />
         <label htmlFor={item._id}>{item.name}</label>
       </div>

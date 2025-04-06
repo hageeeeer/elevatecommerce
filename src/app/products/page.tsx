@@ -8,10 +8,10 @@ export default async function page() {
 
     <div className='container'>
       <div className='my-5'>
-        <span className='font-bold text-xl  py-1 m-8 border-b-2 border-[rgb(251,102,193)]'>Popular items</span>
-        <Suspense fallback={<Loading></Loading>}>
-          <Products />
-        </Suspense>
+        <span className='font-bold text-xl  py-1 my-8 border-b-2 border-[rgb(251,102,193)]'>Popular items</span>
+          <Suspense fallback={<Loading></Loading>}>
+            <Products />
+          </Suspense>
       </div>
     </div>
   )

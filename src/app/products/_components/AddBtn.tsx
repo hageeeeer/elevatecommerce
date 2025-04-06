@@ -25,13 +25,13 @@ export default function AddBtn({ product }: AddBtnProps) {
       });
     },
     onError: () => {
-      // Error handling - Check if error is a message or an object
       const errorMessage =  'login first';
       toast.error(errorMessage, {
         style: {
           backgroundColor: '#F66C1C',
         },
       });
+
     },
   });
 

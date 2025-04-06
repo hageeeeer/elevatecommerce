@@ -38,10 +38,10 @@ export default function Categories({ children }: CategoriesProps) {
 
   return (
     <div className='container'>
-      <div className='flex flex-wrap'>
+      <div className='flex ml-[-12px] mr-[-12px] gap-6'>
         {/* Category List */}
-        <div className="w-1/4">
-          <div className='shadow-lg rounded-3xl p-4 mt-6'>
+        <div className="lg:w-1/4  mt-6 hidden lg:block">
+          <div className='shadow-lg p-4 rounded-3xl'>
             <h2 className='my-3 text-xl font-bold'>Categories</h2>
             <hr />
             <ul className='list-none my-4'>
@@ -53,10 +53,10 @@ export default function Categories({ children }: CategoriesProps) {
         </div>
 
         {/* Product List or children content */}
-        <div className="w-3/4">
+        <div className="lg:w-3/4 w-full justify-center">
           <div className='flex flex-wrap'>
             {productList.length > 0 ? (
-              productList.map((prod) => <ProductItem key={prod._id} item={prod} />)
+              productList.map((prod) => <div key={prod._id} className="lg:w-1/3  sm:w-1/2 w-full p-3"><ProductItem  item={prod} /></div>)
             ) : (
               children // Render children if no products are available
             )}
