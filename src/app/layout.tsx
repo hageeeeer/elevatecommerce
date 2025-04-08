@@ -8,6 +8,7 @@ import Footer from '@/app/_components/footer/Footer';
 import Navbar from '@/app/_components/navbar/Navbar';
 import SearchContextProvider from '@/Context/searchContext';
 import { Inter, Alex_Brush } from '@next/font/google'
+import { Toaster } from 'react-hot-toast';
 const alexBrush = Alex_Brush({
   subsets: ['latin'],  // Add other subsets if needed
   weight: ['400'], // The weight for Alex Brush (typically 400)
@@ -39,6 +40,7 @@ export default function RootLayout({ children}:{
               {children}
               <Footer />
             </div>
+            <Toaster/>
           </SearchContextProvider>
         </SessionProvider>
         </QueryClientProvider> 
