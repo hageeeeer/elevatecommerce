@@ -15,6 +15,7 @@ export default function LoginForm() {
     const [loading, setLoading] = useState(false)
     const [errormsg, seterror] = useState('')
     async function handleLogin({ email, password }: { email: string, password: string }) {
+        setLoading(true)
         const res = await signIn('credentials', {
             email,
             password,

@@ -1,4 +1,4 @@
-import { Product } from "@/app/products/types/products.type"
+import { Product } from "@/app/products/_types/products.type"
 
 export interface CarRes {
   message: string

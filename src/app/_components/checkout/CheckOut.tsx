@@ -1,4 +1,4 @@
-import { Cart } from '@/app/cart/types/cart.types'
+import { Cart } from '@/app/cart/_types/cart.types'
 import Link from 'next/link'
 import React from 'react'
 

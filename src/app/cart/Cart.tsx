@@ -2,14 +2,14 @@
 import React from 'react'
 import Link from 'next/link'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { deleteItem } from './actions/deleteItem'
-import { updateItem } from './actions/updatecart'
+import { deleteItem } from './_actions/deleteItem'
+import { updateItem } from './_actions/updatecart'
 import Loading from '../_components/Loading'
-import { clearcart } from './actions/clearcart'
+import { clearcart } from './_actions/clearcart'
 import img from '../../assests/cart.jpg'
 import Image from 'next/image'
-import {  CartItem } from './types/cart.types'
-import useQueryCart from './hooks/useCart'
+import {  CartItem } from './_types/cart.types'
+import useQueryCart from './_hooks/useCart'
 import CheckOut from '../_components/checkout/CheckOut'
 
 
@@ -100,7 +100,7 @@ export default function Cart() {
                           </svg>
                         </button>
                         <div>
-                          <input type="number" id="first_product" className="bg-gray-50 text-center w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder={`${prod?.quantity}`} required />
+                          <input type="text" id="first_product" className="bg-gray-50 text-center w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 " placeholder={`${prod?.quantity}`} required />
                         </div>
                         <button
                           onClick={() => { updatefn({ product: prod?.product?._id, quantity: prod?.quantity + 1 }) }} className="inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none hover:bg-gray-100 focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700" type="button">
@@ -111,7 +111,7 @@ export default function Cart() {
                         </button>
                       </div>
                     </td>
-                    <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                    <td className="px-6 py-4  text-gray-900 ">
                       {prod?.price}$
                     </td>
                     <td className="px-6 py-4">

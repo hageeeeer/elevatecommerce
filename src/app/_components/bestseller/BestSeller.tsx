@@ -5,10 +5,10 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css'; // core Swiper
 import 'swiper/css/navigation'; // Navigation module
 import 'swiper/css/pagination'; // Pagination module
-import { BestSellerIn } from '@/app/products/types/products.type';
+import { BestSellerIn } from '@/app/products/_types/products.type';
 
 import Image from 'next/image';
-import { BestSellerApi } from '@/app/products/actions/BestSeller';
+import { BestSellerApi } from '@/app/products/_actions/BestSeller';
 export default  function BestSeller() {
  const[data,setdata] = useState<BestSellerIn[]>([])
   async function getBestSeller()

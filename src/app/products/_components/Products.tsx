@@ -1,8 +1,8 @@
 'use client'
 import React, { useContext, useEffect, useState } from 'react'
-import { Product } from '../types/products.type'
+import { Product } from '../_types/products.type'
 import ProductItem from './ProductItem'
-import { AllProducts } from '../actions/Products'
+import { AllProducts } from '../_actions/Products'
 import { SearchData } from '@/Context/searchContext'
 
 

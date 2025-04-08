@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { CarRes } from "../types/cart.types";
+import { CarRes } from "../_types/cart.types";
 import { useSession } from "next-auth/react";
 
 export default function useQueryCart() {

@@ -8,8 +8,10 @@
   color: #FB66C1!important;
    
 }
-
-
 .custom-img{
   height: 300px !important;
+}
+
+img{
+  display: block;
 }

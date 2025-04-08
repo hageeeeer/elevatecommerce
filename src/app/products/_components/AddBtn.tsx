@@ -1,5 +1,5 @@
 'use client';
-import { addToCart } from '@/app/cart/actions/addtocart';
+import { addToCart } from '@/app/cart/_actions/addtocart';
 import React from 'react';
 import toast from 'react-hot-toast';
 import { useMutation, useQueryClient } from '@tanstack/react-query';

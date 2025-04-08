@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
+
 import logo from '../../../assests/logo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import SignOutCo from './SignOutCo'
 import { useSession } from 'next-auth/react'
 
-import useQueryCart from '@/app/cart/hooks/useCart'
+import useQueryCart from '@/app/cart/_hooks/useCart'
 import Search from '../search/Search'
 type NavbarProps = {
   font: {
@@ -15,6 +16,7 @@ type NavbarProps = {
 
 
 export default function Navbar({font}:NavbarProps) {
+
   // Retrieve the session
   const { data: session } = useSession()
   const [toggleSerach,setToggleSearch] = useState(false)
@@ -100,7 +102,7 @@ export default function Navbar({font}:NavbarProps) {
 
                   {response?.numOfCartItems ? 
                   <>
-                  <div className="absolute  bottom-5 left-4 w-6 h-6 flex items-center justify-center rounded-full bg-pink text-white">
+                  <div className="absolute  bottom-7 left-7 w-6 h-6 flex items-center justify-center rounded-full bg-pink text-white">
                     <span>{response.numOfCartItems}</span>
                   </div>
                    
@@ -113,6 +115,7 @@ export default function Navbar({font}:NavbarProps) {
           </ul>
         </div>
       </div>
+     
     </nav>
   )
 }

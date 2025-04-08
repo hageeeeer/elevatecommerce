@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import Check from './Check'
+import Check from './_Check'
 import Loading from '../_components/Loading'
 
 export default function page() {

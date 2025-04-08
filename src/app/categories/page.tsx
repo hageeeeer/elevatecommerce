@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react'
-import Categories from './Categories'
+import Categories from './_Categories'
 import Products from '../products/_components/Products'
 import Loading from '../_components/Loading'
 

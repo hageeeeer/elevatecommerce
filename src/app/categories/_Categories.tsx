@@ -1,9 +1,9 @@
 'use client'
 import React, { ReactNode, useEffect, useState } from 'react';
-import { AllCategories } from './api/categories';
-import { Category } from './types/category.type';
-import CatItem from './CatItem';
-import { Product } from '../products/types/products.type';
+import { AllCategories } from './_api/categories';
+import { Category } from './_types/category.type';
+import CatItem from './_CatItem';
+import { Product } from '../products/_types/products.type';
 import ProductItem from '../products/_components/ProductItem';
 import Loading from '../_components/Loading';
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Product } from '../types/products.type'
+import { Product } from '../_types/products.type'
 import { displayStars } from '@/lib/rate'
 import AddBtn from './AddBtn'
 import Link from 'next/link'

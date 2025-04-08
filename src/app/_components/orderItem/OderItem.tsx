@@ -1,4 +1,4 @@
-import { OrderI, OrderItem } from '@/app/allOrders/types/order.type'
+import { OrderI, OrderItem } from '@/app/allOrders/_types/order.type'
 import Image from 'next/image';
 
 
