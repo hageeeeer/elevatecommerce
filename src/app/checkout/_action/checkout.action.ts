@@ -1,9 +1,7 @@
 "use server"
-
 import { authOptions } from "@/options";
 import { getServerSession } from "next-auth";
-import { dataAddress } from "../type/payment.types";
-
+import { dataAddress } from "../_type/payment.types";
 export async function onlinepayment(shippingAddress: dataAddress) {
     const session = await getServerSession(authOptions);
     if (!session?.token) {
