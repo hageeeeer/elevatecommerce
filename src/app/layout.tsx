@@ -1,5 +1,5 @@
 'use client'
-import '@fortawesome/fontawesome-free/css/all.min.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import './globals.css'
 import { SessionProvider } from 'next-auth/react';
 import { useEffect } from 'react';
@@ -35,7 +35,7 @@ export default function RootLayout({ children}:{
     <QueryClientProvider client={query}>
         <SessionProvider>
           <SearchContextProvider>
-            <div className={`${inter.className} flex flex-col min-h-screen`} >
+            <div className={`${inter.className} flex flex-col justify-between min-h-screen`} >
               <Navbar font={alexBrush} />
               {children}
               <Footer />

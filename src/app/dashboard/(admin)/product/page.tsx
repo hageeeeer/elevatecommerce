@@ -1,10 +1,7 @@
 import React from 'react'
 
-
 export default function page() {
   return (
-    <>
-    dashboard
-    </>
+    <div>page</div>
   )
 }

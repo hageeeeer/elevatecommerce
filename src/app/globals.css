@@ -3,6 +3,17 @@
 @tailwind components;
 @tailwind utilities;
 
+h2{
+  font-size: 30px;
+}
+
+span.about{
+  font-size:17px
+}
+
+ul.about p{
+  font-size: 12px;
+}
 
 .swiper-button-prev, .swiper-button-next{
   color: #FB66C1!important;
@@ -14,4 +25,9 @@
 
 img{
   display: block;
+}
+
+.active{
+background-color: #F82BA9;
+color: #fff;
 }

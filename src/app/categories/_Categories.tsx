@@ -1,7 +1,7 @@
 'use client'
 import React, { ReactNode, useEffect, useState } from 'react';
 import { AllCategories } from './_api/categories';
-import { Category } from './_types/category.type';
+import {  CategoryIn } from './_types/category.type';
 import CatItem from './_CatItem';
 import { Product } from '../products/_types/products.type';
 import ProductItem from '../products/_components/ProductItem';
@@ -12,14 +12,14 @@ interface CategoriesProps {
 }
 
 export default function Categories({ children }: CategoriesProps) {
-  const [catList, setCatList] = useState<Category[]>([]);
+  const [catList, setCatList] = useState<CategoryIn[]>([]);
   const [productList, setProductList] = useState<Product[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
   // Fetch category data
   async function getData() {
     try {
-      const { categories }: { categories: Category[] } = await AllCategories();
+      const { categories }: { categories: CategoryIn[] } = await AllCategories();
       setCatList(categories);
       setLoading(false);
     } catch (error) {
@@ -45,7 +45,7 @@ export default function Categories({ children }: CategoriesProps) {
             <h2 className='my-3 text-xl font-bold'>Categories</h2>
             <hr />
             <ul className='list-none my-4'>
-              {catList?.map((cat: Category) => (
+              {catList?.map((cat: CategoryIn) => (
                 <CatItem fn={setProductList} item={cat} key={cat._id} />
               ))}
             </ul>

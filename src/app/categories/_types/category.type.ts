@@ -1,7 +1,7 @@
 export interface Root {
     message: string
     metadata: Metadata
-    categories: Category[]
+    categories: CategoryIn[]
   }
   
   export interface Metadata {
@@ -11,7 +11,7 @@ export interface Root {
     totalItems: number
   }
   
-  export interface Category {
+  export interface CategoryIn {
     _id: string
     name: string
     slug: string

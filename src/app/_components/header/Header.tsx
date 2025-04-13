@@ -16,7 +16,7 @@ export default function Header() {
         <>
             <div className='lg:flex gap-3  hidden'>
                 <div className='w-1/3 py-4 '>
-                    <Image src={imgpresent} className='w-full h-[400px] rounded-md object-cover' alt="" />
+                    <Image src={imgpresent} className='w-full h-[400px] rounded-[20px] object-cover' alt="" />
                 </div>
                 <div className='w-2/3 py-4'>
                     <Swiper
@@ -28,10 +28,10 @@ export default function Header() {
 
                     >
                         <SwiperSlide >
-                            <Image src={imgpink} className='w-full object-center h-[400px] object-cover rounded-md' alt="pic" />
+                            <Image src={imgpink} className='w-full object-center h-[400px] object-cover rounded-[20px]' alt="pic" />
                         </SwiperSlide>
                         <SwiperSlide >
-                            <Image src={imgpink} className='w-full object-center h-[400px] object-cover rounded-md' alt="pic" />
+                            <Image src={imgpink} className='w-full object-center h-[400px] object-cover rounded-[20px]' alt="pic" />
                         </SwiperSlide>
 
 
@@ -43,13 +43,13 @@ export default function Header() {
             </div>
             <div className='lg:flex gap-3 hidden'>
                 <div className='w-1/3 py-4'>
-                    <Image src={imgblue} className='w-full rounded-md h-[250px] object-cover' alt='' />
+                    <Image src={imgblue} className='w-full rounded-[20px] h-[250px] object-cover' alt='' />
                 </div>
                 <div className='w-1/3 py-4'>
-                    <Image src={imgbox} className='w-full rounded-md h-[250px] object-cover' alt='' />
+                    <Image src={imgbox} className='w-full rounded-[20px] h-[250px] object-cover' alt='' />
                 </div>
                 <div className='w-1/3 py-4'>
-                    <Image src={imgorange} className='w-full rounded-md h-[250px] object-cover' alt='' />
+                    <Image src={imgorange} className='w-full rounded-[20px] h-[250px] object-cover' alt='' />
                 </div>
             </div>
         </>

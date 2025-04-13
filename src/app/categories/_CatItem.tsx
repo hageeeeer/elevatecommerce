@@ -1,11 +1,11 @@
 import React from 'react'
-import { Category } from './_types/category.type'
+import { CategoryIn } from './_types/category.type'
 import { Product } from '../products/_types/products.type'
 import { AllProducts } from '../products/_actions/Products';
 
 interface CatItemProps {
   fn: (arr: Product[]) => void;
-  item: Category;
+  item: CategoryIn;
 }
 
 export default function CatItem({ item, fn }: CatItemProps) {

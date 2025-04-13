@@ -29,8 +29,9 @@ const config: Config = {
         foreground: "var(--foreground)",
         whitepink:'#FEEDF7',
         pink:'#F82BA9',
-        gray:"#757F95"
-      },
+        gray:"#757F95",
+        purble:"#8C52FF"
+      }
     },
   },
   plugins: [  require('flowbite/plugin') ],

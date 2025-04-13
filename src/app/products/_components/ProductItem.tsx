@@ -14,7 +14,7 @@ export default function ProductItem({ item }: { item: Product }) {
                         <i className='fa-regular fa-heart text-white'></i>
                     </div>
 
-                    <Image src={`${item?.imgCover}`} height={300} width={300} className="w-full object-cover rounded-3xl custom-img" alt={item.slug} />
+                    <Image src={`${item?.imgCover}`} height={300} width={300} className="w-full object-cover rounded-[20px] custom-img" alt={item.slug} />
                 </div>
 
 
