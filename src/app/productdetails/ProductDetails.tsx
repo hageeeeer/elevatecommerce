@@ -44,13 +44,13 @@ export default function ProductDetails() {
 
   return (
     <div className="container">
-      <div className="flex gap-10 flex-wrap">
+      <div className="flex gap-10 md:flex-nowrap  flex-wrap">
         <div className="md:w-1/3 w-100">
           <Image
             width={300}
             height={300}
             src={imgSrc || productobj?.imgCover || '/fallback-image.jpg'} 
-            className="rounded-lg object-cover"
+            className="rounded-lg object-cover w-100"
             alt=""
           />
           <div className="flex my-4 justify-between">
